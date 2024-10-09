@@ -1,0 +1,27 @@
+---
+import {basics} from '../../cv.json'
+const {name, label, location, email, image} = basics
+const {city, region} = location
+---
+
+<section>
+    <div>
+        <div>
+            <h1>{name}</h1>
+            <h2>{label}</h2>
+            <span>{city}, {region}</span>
+            <footer>
+                {
+                    email && (
+                        <a href={`mailto:${email}`} title={`Enviar un correo electronico a ${name} al correo ${email}`} target="_blank">
+                            Correo
+                        </a>
+                    )
+                }
+            </footer>
+        </div>
+        <figure class="">
+            <img src={image} alt={name} class="w-60">
+        </figure>
+    </div>
+</section>
